@@ -14,6 +14,8 @@ const imageSlots = {
   ubic: '/images/ubic-behind-scenes.jpg',
 };
 
+const SHOW_PHOTOS = false;
+
 const navItems = [
   ['Journey', '#story'],
   ['Work', '#work'],
@@ -349,12 +351,14 @@ function App() {
                 </RippleLink>
               </div>
             </div>
-            <PhotoSlot
-              src={imageSlots.hero}
-              expected="public/images/faithful-hero.jpg"
-              label="Cinematic portrait of Faithful"
-              className="hero-cinema"
-            />
+            {SHOW_PHOTOS && (
+              <PhotoSlot
+                src={imageSlots.hero}
+                expected="public/images/faithful-hero.jpg"
+                label="Cinematic portrait of Faithful"
+                className="hero-cinema"
+              />
+            )}
           </div>
         </section>
 
@@ -425,18 +429,20 @@ function App() {
                   </article>
                 ))}
               </div>
-              <aside className="proof-strip">
-                <PhotoSlot
-                  src={imageSlots.hero}
-                  expected="public/images/faithful-hero.jpg"
-                  label="Faithful portrait"
-                />
-                <PhotoSlot
-                  src={imageSlots.ubic}
-                  expected="public/images/ubic-behind-scenes.jpg"
-                  label="Behind the scenes at Ubic Media Agency"
-                />
-              </aside>
+              {SHOW_PHOTOS && (
+                <aside className="proof-strip">
+                  <PhotoSlot
+                    src={imageSlots.hero}
+                    expected="public/images/faithful-hero.jpg"
+                    label="Faithful portrait"
+                  />
+                  <PhotoSlot
+                    src={imageSlots.ubic}
+                    expected="public/images/ubic-behind-scenes.jpg"
+                    label="Behind the scenes at Ubic Media Agency"
+                  />
+                </aside>
+              )}
             </div>
           </div>
         </section>
@@ -447,7 +453,7 @@ function App() {
               kicker="Speaking"
               title="I speak about reinvention, storytelling, and building a craft from a hustle."
             />
-            <div className="speaking-pass">
+            <div className={`speaking-pass ${SHOW_PHOTOS ? '' : 'no-photo'}`}>
               <div className="pass-copy">
                 <p className="mono">Boarding: Faithful K. Quayson</p>
                 <h3 className="display">Invite me to speak</h3>
@@ -466,12 +472,14 @@ function App() {
                   Send speaking invite
                 </RippleLink>
               </div>
-              <PhotoSlot
-                src={imageSlots.speaking}
-                expected="public/images/faithful-speaking.jpg"
-                label="Faithful speaking"
-                className="speaking-photo"
-              />
+              {SHOW_PHOTOS && (
+                <PhotoSlot
+                  src={imageSlots.speaking}
+                  expected="public/images/faithful-speaking.jpg"
+                  label="Faithful speaking"
+                  className="speaking-photo"
+                />
+              )}
             </div>
           </div>
         </section>

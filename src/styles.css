@@ -290,7 +290,21 @@ img {
   transform: none;
 }
 
+.hero-cinema:nth-child(even),
+.hero-cinema:nth-child(odd),
+.speaking-photo:nth-child(even),
+.speaking-photo:nth-child(odd) {
+  transform: none;
+}
+
 .hero-cinema::before {
+  display: none;
+}
+
+.hero-cinema:nth-child(even)::before,
+.hero-cinema:nth-child(odd)::before,
+.speaking-photo:nth-child(even)::before,
+.speaking-photo:nth-child(odd)::before {
   display: none;
 }
 
@@ -517,7 +531,7 @@ img {
 
 .work-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(230px, 0.34fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 28px;
 }
 
@@ -600,6 +614,14 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 5px;
   background: rgba(255, 255, 255, 0.06);
+}
+
+.speaking-pass.no-photo {
+  grid-template-columns: 1fr;
+}
+
+.speaking-pass.no-photo .pass-copy {
+  max-width: 780px;
 }
 
 .pass-copy {
