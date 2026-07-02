@@ -329,7 +329,7 @@ function App() {
             <div className="hero-copy">
               <p className="eyebrow">
                 <span />
-                Kumasi, Ghana - Creative entrepreneur
+                Accra, Ghana - Creative entrepreneur
               </p>
               <h1 className="display">
                 I sold sneakers before I sold <span>ideas.</span>
