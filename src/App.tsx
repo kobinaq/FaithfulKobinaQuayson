@@ -3,7 +3,8 @@ import { MouseEvent, TouchEvent, useEffect, useMemo, useRef, useState } from 're
 const CONTACT = {
   email: 'hello@faithfulquayson.com',
   linkedIn: 'https://www.linkedin.com/in/faithful-kobina-quayson-128266110/',
-  instagram: '#',
+  x: 'https://x.com/kobina__',
+  instagram: 'https://www.instagram.com/kobina__/',
   ubic: '#',
 };
 
@@ -526,7 +527,12 @@ function App() {
             <a href={CONTACT.linkedIn} target="_blank" rel="noreferrer">
               LinkedIn
             </a>
-            <a href={CONTACT.instagram}>Instagram</a>
+            <a href={CONTACT.x} target="_blank" rel="noreferrer">
+              X
+            </a>
+            <a href={CONTACT.instagram} target="_blank" rel="noreferrer">
+              Instagram
+            </a>
             <a href={CONTACT.ubic}>Ubic Media Agency</a>
             <a href={`mailto:${CONTACT.email}`}>Email</a>
           </div>
